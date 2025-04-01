@@ -1,0 +1,45 @@
+Based on my review of the code and documentation, here are the criteria for developing games outside the framework and integrating them into the Skunk Arcade:
+
+1. **Game Engine Compatibility**:
+   - Your game must extend the base `GameEngine` class
+   - Implement required methods: `update()`, `render()`, `handleKeyDown()`, etc.
+   - Follow the game loop pattern established in `GameEngine.ts`
+
+2. **Canvas Integration**:
+   - Games must render to an HTML5 Canvas element
+   - Support responsive canvas sizing (600x400 default)
+   - Handle pixel-art style rendering with appropriate scaling
+
+3. **Input Handling**:
+   - Implement keyboard controls for desktop 
+   - Implement touch controls for mobile (optional but recommended)
+   - Use the input handling pattern from the framework
+
+4. **Game Registration**:
+   - Create a new game class file in `src/lib/`
+   - Update the `ArcadeCabinet.tsx` component to include your game:
+     - Add your game to the `GameType` type definition
+     - Add game initialization code in the useEffect
+     - Include a game selection button with appropriate artwork
+
+5. **Asset Management**:
+   - Store game assets in the public directory
+   - Follow naming conventions for images
+   - Implement appropriate asset loading in your game class
+
+6. **Retro Styling**:
+   - Maintain the retro pixel art aesthetic
+   - Match the skunk/arcade theme where appropriate
+   - Follow the established visual style
+
+7. **State Management**:
+   - Implement proper game state handling (running/paused/gameover)
+   - Support restart functionality
+   - Track and display score
+
+8. **Optimization**:
+   - Ensure smooth performance
+   - Optimize asset loading
+   - Handle cleanup properly when game is switched
+
+If you want to develop a game completely outside the framework first, ensure that you eventually adapt it to meet these requirements for integration into the arcade.

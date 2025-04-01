@@ -84,4 +84,11 @@ export class GameEngine {
     window.removeEventListener('touchstart', this.handleTouchStart.bind(this));
     window.removeEventListener('touchmove', this.handleTouchMove.bind(this));
   }
+  
+  public restart() {
+    // This method is meant to be overridden by specific game implementations
+    // Default implementation just restarts the game loop
+    this.gameState = 'running';
+    this.gameLoop(0);
+  }
 } 
