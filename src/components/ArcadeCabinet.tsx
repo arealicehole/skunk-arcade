@@ -3,9 +3,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { StankGame } from '@/lib/StankGame';
 import { BongGame } from '@/lib/BongGame';
+import { HashBashGame } from '@/lib/HashBashGame';
 import { GameEngine } from '@/lib/GameEngine';
 
-type GameType = 'stank' | 'bong';
+type GameType = 'stank' | 'bong' | 'hashbash';
 
 export default function ArcadeCabinet() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -32,6 +33,8 @@ export default function ArcadeCabinet() {
       gameRef.current = new StankGame(canvasRef.current);
     } else if (currentGame === 'bong') {
       gameRef.current = new BongGame(canvasRef.current);
+    } else if (currentGame === 'hashbash') {
+      gameRef.current = new HashBashGame(canvasRef.current);
     }
 
     // Start game if we were playing
@@ -75,29 +78,41 @@ export default function ArcadeCabinet() {
             <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black bg-opacity-80 p-8 rounded-lg">
               <h2 className="text-green-500 monospace text-2xl mb-8">SELECT GAME</h2>
               
-              <div className="grid grid-cols-2 gap-6 w-full max-w-xl">
+              <div className="grid grid-cols-3 gap-4 w-full max-w-2xl">
                 <button 
                   onClick={() => handleSelectGame('stank')}
-                  className={`p-4 rounded-lg border-2 flex flex-col items-center justify-center ${
+                  className={`p-3 rounded-lg border-2 flex flex-col items-center justify-center ${
                     currentGame === 'stank' ? 'border-green-500 bg-green-900 bg-opacity-50' : 'border-gray-700 hover:border-green-700'
                   }`}
                 >
-                  <div className="h-32 flex items-center justify-center mb-2">
-                    <img src="/images/game-covers/STANK.png" alt="Stank Game" className="h-32 w-32 object-contain" />
+                  <div className="h-24 flex items-center justify-center mb-2">
+                    <img src="/images/game-covers/STANK.png" alt="Stank Game" className="h-24 w-24 object-contain" />
                   </div>
-                  <span className="monospace text-green-500 text-center">STANK</span>
+                  <span className="monospace text-green-500 text-center text-xs">STANK</span>
                 </button>
                 
                 <button
                   onClick={() => handleSelectGame('bong')}
-                  className={`p-4 rounded-lg border-2 flex flex-col items-center justify-center ${
+                  className={`p-3 rounded-lg border-2 flex flex-col items-center justify-center ${
                     currentGame === 'bong' ? 'border-green-500 bg-green-900 bg-opacity-50' : 'border-gray-700 hover:border-green-700'
                   }`}
                 >
-                  <div className="h-32 flex items-center justify-center mb-2">
-                    <img src="/images/game-covers/BONG.png" alt="Bong Game" className="h-32 w-32 object-contain" />
+                  <div className="h-24 flex items-center justify-center mb-2">
+                    <img src="/images/game-covers/BONG.png" alt="Bong Game" className="h-24 w-24 object-contain" />
                   </div>
-                  <span className="monospace text-green-500 text-center">BONG</span>
+                  <span className="monospace text-green-500 text-center text-xs">BONG</span>
+                </button>
+
+                <button
+                  onClick={() => handleSelectGame('hashbash')}
+                  className={`p-3 rounded-lg border-2 flex flex-col items-center justify-center ${
+                    currentGame === 'hashbash' ? 'border-green-500 bg-green-900 bg-opacity-50' : 'border-gray-700 hover:border-green-700'
+                  }`}
+                >
+                  <div className="h-24 flex items-center justify-center mb-2">
+                    <img src="/images/game-covers/HASHBASH.svg" alt="Hash Bash Game" className="h-24 w-24 object-contain" />
+                  </div>
+                  <span className="monospace text-green-500 text-center text-xs">HASH BASH</span>
                 </button>
               </div>
               
@@ -135,10 +150,15 @@ export default function ArcadeCabinet() {
                     <p>USE ARROW KEYS</p>
                     <p>TO CONTROL</p>
                   </>
-                ) : (
+                ) : currentGame === 'bong' ? (
                   <>
                     <p>P1: W/S KEYS</p>
                     <p>P2: ARROW KEYS</p>
+                  </>
+                ) : (
+                  <>
+                    <p>ARROWS: MOVE</p>
+                    <p>SPACE: LAUNCH</p>
                   </>
                 )}
                 <div className="flex space-x-2">
@@ -168,7 +188,7 @@ export default function ArcadeCabinet() {
               <div className="bg-black p-3 rounded border border-gray-700">
                 <div className="text-green-500 monospace text-xs">GAME</div>
                 <div className="text-green-500 monospace text-sm mt-1">
-                  {currentGame === 'stank' ? 'STANK' : 'BONG'}
+                  {currentGame === 'stank' ? 'STANK' : currentGame === 'bong' ? 'BONG' : 'HASH BASH'}
                 </div>
               </div>
             </div>

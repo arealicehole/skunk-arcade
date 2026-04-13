@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" shape-rendering="crispEdges">
+  <!-- Background -->
+  <rect width="128" height="128" fill="#0a0a14"/>
+
+  <!-- Stars -->
+  <rect x="12" y="8" width="2" height="2" fill="#ffffff" opacity="0.4"/>
+  <rect x="95" y="15" width="2" height="2" fill="#ffffff" opacity="0.3"/>
+  <rect x="45" y="22" width="2" height="2" fill="#ffffff" opacity="0.5"/>
+  <rect x="78" y="9" width="2" height="2" fill="#ffffff" opacity="0.3"/>
+  <rect x="110" y="35" width="2" height="2" fill="#ffffff" opacity="0.4"/>
+  <rect x="20" y="45" width="2" height="2" fill="#ffffff" opacity="0.3"/>
+  <rect x="60" y="5" width="2" height="2" fill="#ffffff" opacity="0.5"/>
+
+  <!-- Title: HASH -->
+  <g fill="#FFD700">
+    <!-- H -->
+    <rect x="16" y="8" width="3" height="18"/>
+    <rect x="27" y="8" width="3" height="18"/>
+    <rect x="19" y="15" width="8" height="3"/>
+    <!-- A -->
+    <rect x="34" y="11" width="3" height="15"/>
+    <rect x="45" y="11" width="3" height="15"/>
+    <rect x="37" y="8" width="8" height="3"/>
+    <rect x="37" y="17" width="8" height="3"/>
+    <!-- S -->
+    <rect x="52" y="8" width="11" height="3"/>
+    <rect x="52" y="8" width="3" height="9"/>
+    <rect x="52" y="14" width="11" height="3"/>
+    <rect x="60" y="14" width="3" height="9"/>
+    <rect x="52" y="23" width="11" height="3"/>
+    <!-- H -->
+    <rect x="68" y="8" width="3" height="18"/>
+    <rect x="79" y="8" width="3" height="18"/>
+    <rect x="71" y="15" width="8" height="3"/>
+  </g>
+
+  <!-- Title: BASH -->
+  <g fill="#FF6B35">
+    <!-- B -->
+    <rect x="16" y="30" width="3" height="18"/>
+    <rect x="19" y="30" width="8" height="3"/>
+    <rect x="19" y="38" width="8" height="3"/>
+    <rect x="19" y="45" width="8" height="3"/>
+    <rect x="27" y="33" width="3" height="5"/>
+    <rect x="27" y="40" width="3" height="5"/>
+    <!-- A -->
+    <rect x="34" y="33" width="3" height="15"/>
+    <rect x="45" y="33" width="3" height="15"/>
+    <rect x="37" y="30" width="8" height="3"/>
+    <rect x="37" y="39" width="8" height="3"/>
+    <!-- S -->
+    <rect x="52" y="30" width="11" height="3"/>
+    <rect x="52" y="30" width="3" height="9"/>
+    <rect x="52" y="36" width="11" height="3"/>
+    <rect x="60" y="36" width="3" height="9"/>
+    <rect x="52" y="45" width="11" height="3"/>
+    <!-- H -->
+    <rect x="68" y="30" width="3" height="18"/>
+    <rect x="79" y="30" width="3" height="18"/>
+    <rect x="71" y="37" width="8" height="3"/>
+  </g>
+
+  <!-- Brick row 1 (Bongs - red) -->
+  <g fill="#8B0000">
+    <rect x="8" y="56" width="22" height="10" rx="1"/>
+    <rect x="34" y="56" width="22" height="10" rx="1"/>
+    <rect x="60" y="56" width="22" height="10" rx="1"/>
+    <rect x="86" y="56" width="22" height="10" rx="1"/>
+    <rect x="112" y="56" width="8" height="10" rx="1"/>
+  </g>
+  <g fill="rgba(255,255,255,0.2)">
+    <rect x="8" y="56" width="22" height="2"/>
+    <rect x="34" y="56" width="22" height="2"/>
+    <rect x="60" y="56" width="22" height="2"/>
+    <rect x="86" y="56" width="22" height="2"/>
+    <rect x="112" y="56" width="8" height="2"/>
+  </g>
+
+  <!-- Brick row 2 (Blunts - green) -->
+  <g fill="#2E8B57">
+    <rect x="8" y="70" width="22" height="10" rx="1"/>
+    <rect x="34" y="70" width="22" height="10" rx="1"/>
+    <rect x="60" y="70" width="22" height="10" rx="1"/>
+    <rect x="86" y="70" width="22" height="10" rx="1"/>
+    <rect x="112" y="70" width="8" height="10" rx="1"/>
+  </g>
+  <g fill="rgba(255,255,255,0.2)">
+    <rect x="8" y="70" width="22" height="2"/>
+    <rect x="34" y="70" width="22" height="2"/>
+    <rect x="60" y="70" width="22" height="2"/>
+    <rect x="86" y="70" width="22" height="2"/>
+    <rect x="112" y="70" width="8" height="2"/>
+  </g>
+
+  <!-- Brick row 3 (Doobies - gold) -->
+  <g fill="#DAA520">
+    <rect x="8" y="84" width="22" height="10" rx="1"/>
+    <rect x="34" y="84" width="22" height="10" rx="1"/>
+    <rect x="60" y="84" width="22" height="10" rx="1"/>
+    <rect x="86" y="84" width="22" height="10" rx="1"/>
+    <rect x="112" y="84" width="8" height="10" rx="1"/>
+  </g>
+  <g fill="rgba(255,255,255,0.2)">
+    <rect x="8" y="84" width="22" height="2"/>
+    <rect x="34" y="84" width="22" height="2"/>
+    <rect x="60" y="84" width="22" height="2"/>
+    <rect x="86" y="84" width="22" height="2"/>
+    <rect x="112" y="84" width="8" height="2"/>
+  </g>
+
+  <!-- Hash ball (glowing) -->
+  <circle cx="64" cy="102" r="6" fill="#C8923A"/>
+  <circle cx="62" cy="100" r="2" fill="rgba(255,220,150,0.6)"/>
+  <circle cx="64" cy="102" r="10" fill="none" stroke="rgba(180,120,50,0.3)" stroke-width="3"/>
+
+  <!-- Pipe paddle -->
+  <rect x="42" y="112" width="50" height="8" fill="#8B5E3C" rx="1"/>
+  <rect x="42" y="108" width="10" height="6" fill="#6B3A1F" rx="1"/>
+  <rect x="43" y="109" width="8" height="4" fill="#8B5E3C"/>
+  <rect x="84" y="113" width="8" height="6" fill="#6B3A1F"/>
+  <rect x="42" y="112" width="50" height="2" fill="rgba(255,255,255,0.15)"/>
+
+  <!-- Green glow accent -->
+  <rect x="0" y="124" width="128" height="4" fill="#00FF88" opacity="0.5"/>
+</svg>

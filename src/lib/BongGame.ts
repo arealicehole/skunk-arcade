@@ -160,7 +160,8 @@ export class BongGame extends GameEngine {
     }
   }
 
-  protected update(deltaTime: number) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected update(_deltaTime: number) {
     if (this.gameState !== 'running') return;
 
     // Move the ball

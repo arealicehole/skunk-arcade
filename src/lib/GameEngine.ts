@@ -19,19 +19,23 @@ export class GameEngine {
     window.addEventListener('touchmove', this.handleTouchMove.bind(this));
   }
 
-  protected handleKeyDown(event: KeyboardEvent) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected handleKeyDown(_event: KeyboardEvent) {
     // To be implemented by specific games
   }
 
-  protected handleTouchStart(event: TouchEvent) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected handleTouchStart(_event: TouchEvent) {
     // To be implemented by specific games
   }
 
-  protected handleTouchMove(event: TouchEvent) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected handleTouchMove(_event: TouchEvent) {
     // To be implemented by specific games
   }
 
-  protected update(deltaTime: number) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected update(_deltaTime: number) {
     // To be implemented by specific games
   }
 
