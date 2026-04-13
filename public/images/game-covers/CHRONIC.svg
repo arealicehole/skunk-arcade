@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Dark background -->
+  <rect width="100" height="100" fill="#0a0612"/>
+  
+  <!-- Stars -->
+  <circle cx="15" cy="12" r="1" fill="#00FF66" opacity="0.6"/>
+  <circle cx="80" cy="8" r="1.2" fill="#00FF66" opacity="0.4"/>
+  <circle cx="45" cy="18" r="0.8" fill="#00FF88" opacity="0.5"/>
+  <circle cx="70" cy="25" r="1" fill="#00FF66" opacity="0.3"/>
+  <circle cx="25" cy="30" r="0.7" fill="#00FF88" opacity="0.5"/>
+  <circle cx="90" cy="40" r="1" fill="#00FF66" opacity="0.4"/>
+  <circle cx="8" cy="55" r="0.9" fill="#00FF88" opacity="0.3"/>
+  
+  <!-- Invader rows (blunts as aliens) -->
+  <!-- Row 1 - top -->
+  <rect x="22" y="14" width="8" height="4" rx="2" fill="#8B4513"/>
+  <circle cx="23" cy="16" r="1.5" fill="#FF6600"/>
+  <rect x="38" y="14" width="8" height="4" rx="2" fill="#8B4513"/>
+  <circle cx="39" cy="16" r="1.5" fill="#FF6600"/>
+  <rect x="54" y="14" width="8" height="4" rx="2" fill="#8B4513"/>
+  <circle cx="55" cy="16" r="1.5" fill="#FF6600"/>
+  <rect x="70" y="14" width="8" height="4" rx="2" fill="#8B4513"/>
+  <circle cx="71" cy="16" r="1.5" fill="#FF6600"/>
+  
+  <!-- Row 2 - leaves -->
+  <polygon points="26,26 22,32 26,30 30,32" fill="#1B5E20"/>
+  <polygon points="42,26 38,32 42,30 46,32" fill="#1B5E20"/>
+  <polygon points="58,26 54,32 58,30 62,32" fill="#1B5E20"/>
+  <polygon points="74,26 70,32 74,30 78,32" fill="#1B5E20"/>
+  
+  <!-- Row 3 - doobies -->
+  <rect x="20" y="38" width="12" height="3" rx="1.5" fill="#F5F5DC"/>
+  <circle cx="31" cy="39.5" r="1.2" fill="#FF4400"/>
+  <rect x="36" y="38" width="12" height="3" rx="1.5" fill="#F5F5DC"/>
+  <circle cx="47" cy="39.5" r="1.2" fill="#FF4400"/>
+  <rect x="52" y="38" width="12" height="3" rx="1.5" fill="#F5F5DC"/>
+  <circle cx="63" cy="39.5" r="1.2" fill="#FF4400"/>
+  <rect x="68" y="38" width="12" height="3" rx="1.5" fill="#F5F5DC"/>
+  <circle cx="79" cy="39.5" r="1.2" fill="#FF4400"/>
+  
+  <!-- Player ship (skunk) at bottom -->
+  <polygon points="50,82 42,92 58,92" fill="#00FF66"/>
+  <rect x="47" y="78" width="6" height="4" rx="1" fill="#00FF66"/>
+  
+  <!-- Bullet -->
+  <rect x="49" y="68" width="2" height="6" fill="#FFD700"/>
+  
+  <!-- CHRONIC text -->
+  <text x="50" y="58" font-family="monospace" font-weight="bold" font-size="9" fill="#00FF66" text-anchor="middle" letter-spacing="1">CHRONIC</text>
+  <text x="50" y="67" font-family="monospace" font-size="5" fill="#00FF66" opacity="0.6" text-anchor="middle" letter-spacing="2">INVADERS</text>
+</svg>

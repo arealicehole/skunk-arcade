@@ -4,9 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 import { StankGame } from '@/lib/StankGame';
 import { BongGame } from '@/lib/BongGame';
 import { HashBashGame } from '@/lib/HashBashGame';
+import { ChronicInvadersGame } from '@/lib/ChronicInvadersGame';
 import { GameEngine } from '@/lib/GameEngine';
 
-type GameType = 'stank' | 'bong' | 'hashbash';
+type GameType = 'stank' | 'bong' | 'hashbash' | 'chronic';
 
 export default function ArcadeCabinet() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -35,6 +36,8 @@ export default function ArcadeCabinet() {
       gameRef.current = new BongGame(canvasRef.current);
     } else if (currentGame === 'hashbash') {
       gameRef.current = new HashBashGame(canvasRef.current);
+    } else if (currentGame === 'chronic') {
+      gameRef.current = new ChronicInvadersGame(canvasRef.current);
     }
 
     // Start game if we were playing
@@ -114,6 +117,18 @@ export default function ArcadeCabinet() {
                   </div>
                   <span className="monospace text-green-500 text-center text-xs">HASH BASH</span>
                 </button>
+
+                <button
+                  onClick={() => handleSelectGame('chronic')}
+                  className={`p-3 rounded-lg border-2 flex flex-col items-center justify-center ${
+                    currentGame === 'chronic' ? 'border-green-500 bg-green-900 bg-opacity-50' : 'border-gray-700 hover:border-green-700'
+                  }`}
+                >
+                  <div className="h-24 flex items-center justify-center mb-2">
+                    <img src="/images/game-covers/CHRONIC.svg" alt="Chronic Invaders Game" className="h-24 w-24 object-contain" />
+                  </div>
+                  <span className="monospace text-green-500 text-center text-xs">CHRONIC</span>
+                </button>
               </div>
               
               <button
@@ -155,6 +170,11 @@ export default function ArcadeCabinet() {
                     <p>P1: W/S KEYS</p>
                     <p>P2: ARROW KEYS</p>
                   </>
+                ) : currentGame === 'chronic' ? (
+                  <>
+                    <p>ARROWS: MOVE</p>
+                    <p>SPACE: SHOOT</p>
+                  </>
                 ) : (
                   <>
                     <p>ARROWS: MOVE</p>
@@ -188,7 +208,7 @@ export default function ArcadeCabinet() {
               <div className="bg-black p-3 rounded border border-gray-700">
                 <div className="text-green-500 monospace text-xs">GAME</div>
                 <div className="text-green-500 monospace text-sm mt-1">
-                  {currentGame === 'stank' ? 'STANK' : currentGame === 'bong' ? 'BONG' : 'HASH BASH'}
+                  {currentGame === 'stank' ? 'STANK' : currentGame === 'bong' ? 'BONG' : currentGame === 'hashbash' ? 'HASH BASH' : 'CHRONIC'}
                 </div>
               </div>
             </div>
