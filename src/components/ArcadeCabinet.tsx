@@ -5,9 +5,10 @@ import { StankGame } from '@/lib/StankGame';
 import { BongGame } from '@/lib/BongGame';
 import { HashBashGame } from '@/lib/HashBashGame';
 import { ChronicInvadersGame } from '@/lib/ChronicInvadersGame';
+import { BudBomberGame } from '@/lib/BudBomberGame';
 import { GameEngine } from '@/lib/GameEngine';
 
-type GameType = 'stank' | 'bong' | 'hashbash' | 'chronic';
+type GameType = 'stank' | 'bong' | 'hashbash' | 'chronic' | 'budbomber';
 
 export default function ArcadeCabinet() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -38,6 +39,8 @@ export default function ArcadeCabinet() {
       gameRef.current = new HashBashGame(canvasRef.current);
     } else if (currentGame === 'chronic') {
       gameRef.current = new ChronicInvadersGame(canvasRef.current);
+    } else if (currentGame === 'budbomber') {
+      gameRef.current = new BudBomberGame(canvasRef.current);
     }
 
     // Start game if we were playing
@@ -129,6 +132,18 @@ export default function ArcadeCabinet() {
                   </div>
                   <span className="monospace text-green-500 text-center text-xs">CHRONIC</span>
                 </button>
+
+                <button
+                  onClick={() => handleSelectGame('budbomber')}
+                  className={`p-3 rounded-lg border-2 flex flex-col items-center justify-center ${
+                    currentGame === 'budbomber' ? 'border-green-500 bg-green-900 bg-opacity-50' : 'border-gray-700 hover:border-green-700'
+                  }`}
+                >
+                  <div className="h-24 flex items-center justify-center mb-2">
+                    <img src="/images/game-covers/BUDBOMBER.png" alt="Bud Bomber Game" className="h-24 w-24 object-contain" />
+                  </div>
+                  <span className="monospace text-green-500 text-center text-xs">BUD BOMBER</span>
+                </button>
               </div>
               
               <button
@@ -175,10 +190,15 @@ export default function ArcadeCabinet() {
                     <p>ARROWS: MOVE</p>
                     <p>SPACE: SHOOT</p>
                   </>
-                ) : (
+                ) : currentGame === 'hashbash' ? (
                   <>
                     <p>ARROWS: MOVE</p>
                     <p>SPACE: LAUNCH</p>
+                  </>
+                ) : (
+                  <>
+                    <p>WASD: MOVE</p>
+                    <p>SPACE: SHOOT</p>
                   </>
                 )}
                 <div className="flex space-x-2">
@@ -208,7 +228,7 @@ export default function ArcadeCabinet() {
               <div className="bg-black p-3 rounded border border-gray-700">
                 <div className="text-green-500 monospace text-xs">GAME</div>
                 <div className="text-green-500 monospace text-sm mt-1">
-                  {currentGame === 'stank' ? 'STANK' : currentGame === 'bong' ? 'BONG' : currentGame === 'hashbash' ? 'HASH BASH' : 'CHRONIC'}
+                  {currentGame === 'stank' ? 'STANK' : currentGame === 'bong' ? 'BONG' : currentGame === 'chronic' ? 'CHRONIC' : currentGame === 'hashbash' ? 'HASH BASH' : 'BUD BOMBER'}
                 </div>
               </div>
             </div>
