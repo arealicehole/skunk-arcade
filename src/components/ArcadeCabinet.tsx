@@ -121,31 +121,31 @@ export default function ArcadeCabinet() {
                   <span className="monospace text-green-500 text-center text-xs">HASH BASH</span>
                 </button>
 
-             <button
-                onClick={() => handleSelectGame('chronic')}
-                className={`p-3 rounded-lg border-2 flex flex-col items-center justify-center ${
-                  currentGame === 'chronic' ? 'border-green-500 bg-green-900 bg-opacity-50' : 'border-gray-700 hover:border-green-700'
-                }`}
-              >
-                <div className="h-24 flex items-center justify-center mb-2">
-                  <img src="/images/game-covers/CHRONIC.svg" alt="Chronic Invaders Game" className="h-24 w-24 object-contain" />
-                </div>
-                <span className="monospace text-green-500 text-center text-xs">CHRONIC</span>
-              </button>
-              
-              <button
-                onClick={() => handleSelectGame('stankstack')}
-                className={`p-3 rounded-lg border-2 flex flex-col items-center justify-center ${
-                  currentGame === 'stankstack' ? 'border-green-500 bg-green-900 bg-opacity-50' : 'border-gray-700 hover:border-green-700'
-                }`}
-              >
-                <div className="h-24 flex items-center justify-center mb-2">
-                  <img src="/images/game-covers/STANKSTACK.svg" alt="Stank Stack Game" className="h-24 w-24 object-contain" />
-                </div>
-                <span className="monospace text-green-500 text-center text-xs">STANK STACK</span>
-              </button>
-            </div>
-              
+                <button
+                  onClick={() => handleSelectGame('chronic')}
+                  className={`p-3 rounded-lg border-2 flex flex-col items-center justify-center ${
+                    currentGame === 'chronic' ? 'border-green-500 bg-green-900 bg-opacity-50' : 'border-gray-700 hover:border-green-700'
+                  }`}
+                >
+                  <div className="h-24 flex items-center justify-center mb-2">
+                    <img src="/images/game-covers/CHRONIC.svg" alt="Chronic Invaders Game" className="h-24 w-24 object-contain" />
+                  </div>
+                  <span className="monospace text-green-500 text-center text-xs">CHRONIC</span>
+                </button>
+                
+                <button
+                  onClick={() => handleSelectGame('stankstack')}
+                  className={`p-3 rounded-lg border-2 flex flex-col items-center justify-center ${
+                    currentGame === 'stankstack' ? 'border-green-500 bg-green-900 bg-opacity-50' : 'border-gray-700 hover:border-green-700'
+                  }`}
+                >
+                  <div className="h-24 flex items-center justify-center mb-2">
+                    <img src="/images/game-covers/STANKSTACK.svg" alt="Stank Stack Game" className="h-24 w-24 object-contain" />
+                  </div>
+                  <span className="monospace text-green-500 text-center text-xs">STANK STACK</span>
+                </button>
+              </div>
+
               <button
                 onClick={handleStartGame}
                 className="mt-8 px-6 py-3 bg-green-600 text-white monospace rounded-lg hover:bg-green-700 transition-colors"
@@ -259,4 +259,4 @@ export default function ArcadeCabinet() {
       `}</style>
     </div>
   );
-} 
+}
