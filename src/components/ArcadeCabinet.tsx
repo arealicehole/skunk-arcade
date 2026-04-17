@@ -5,9 +5,10 @@ import { StankGame } from '@/lib/StankGame';
 import { BongGame } from '@/lib/BongGame';
 import { HashBashGame } from '@/lib/HashBashGame';
 import { ChronicInvadersGame } from '@/lib/ChronicInvadersGame';
+import { StankStackGame } from '@/lib/StankStackGame';
 import { GameEngine } from '@/lib/GameEngine';
 
-type GameType = 'stank' | 'bong' | 'hashbash' | 'chronic';
+type GameType = 'stank' | 'bong' | 'hashbash' | 'chronic' | 'stankstack';
 
 export default function ArcadeCabinet() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -38,6 +39,8 @@ export default function ArcadeCabinet() {
       gameRef.current = new HashBashGame(canvasRef.current);
     } else if (currentGame === 'chronic') {
       gameRef.current = new ChronicInvadersGame(canvasRef.current);
+    } else if (currentGame === 'stankstack') {
+      gameRef.current = new StankStackGame(canvasRef.current);
     }
 
     // Start game if we were playing
@@ -81,7 +84,7 @@ export default function ArcadeCabinet() {
             <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black bg-opacity-80 p-8 rounded-lg">
               <h2 className="text-green-500 monospace text-2xl mb-8">SELECT GAME</h2>
               
-              <div className="grid grid-cols-3 gap-4 w-full max-w-2xl">
+              <div className="grid grid-cols-5 gap-4 w-full max-w-4xl">
                 <button 
                   onClick={() => handleSelectGame('stank')}
                   className={`p-3 rounded-lg border-2 flex flex-col items-center justify-center ${
@@ -118,18 +121,30 @@ export default function ArcadeCabinet() {
                   <span className="monospace text-green-500 text-center text-xs">HASH BASH</span>
                 </button>
 
-                <button
-                  onClick={() => handleSelectGame('chronic')}
-                  className={`p-3 rounded-lg border-2 flex flex-col items-center justify-center ${
-                    currentGame === 'chronic' ? 'border-green-500 bg-green-900 bg-opacity-50' : 'border-gray-700 hover:border-green-700'
-                  }`}
-                >
-                  <div className="h-24 flex items-center justify-center mb-2">
-                    <img src="/images/game-covers/CHRONIC.svg" alt="Chronic Invaders Game" className="h-24 w-24 object-contain" />
-                  </div>
-                  <span className="monospace text-green-500 text-center text-xs">CHRONIC</span>
-                </button>
-              </div>
+             <button
+                onClick={() => handleSelectGame('chronic')}
+                className={`p-3 rounded-lg border-2 flex flex-col items-center justify-center ${
+                  currentGame === 'chronic' ? 'border-green-500 bg-green-900 bg-opacity-50' : 'border-gray-700 hover:border-green-700'
+                }`}
+              >
+                <div className="h-24 flex items-center justify-center mb-2">
+                  <img src="/images/game-covers/CHRONIC.svg" alt="Chronic Invaders Game" className="h-24 w-24 object-contain" />
+                </div>
+                <span className="monospace text-green-500 text-center text-xs">CHRONIC</span>
+              </button>
+              
+              <button
+                onClick={() => handleSelectGame('stankstack')}
+                className={`p-3 rounded-lg border-2 flex flex-col items-center justify-center ${
+                  currentGame === 'stankstack' ? 'border-green-500 bg-green-900 bg-opacity-50' : 'border-gray-700 hover:border-green-700'
+                }`}
+              >
+                <div className="h-24 flex items-center justify-center mb-2">
+                  <img src="/images/game-covers/STANKSTACK.svg" alt="Stank Stack Game" className="h-24 w-24 object-contain" />
+                </div>
+                <span className="monospace text-green-500 text-center text-xs">STANK STACK</span>
+              </button>
+            </div>
               
               <button
                 onClick={handleStartGame}
@@ -175,6 +190,11 @@ export default function ArcadeCabinet() {
                     <p>ARROWS: MOVE</p>
                     <p>SPACE: SHOOT</p>
                   </>
+                ) : currentGame === 'stankstack' ? (
+                  <>
+                    <p>ARROWS: MOVE</p>
+                    <p>STACK BEFORE OVERFLOW</p>
+                  </>
                 ) : (
                   <>
                     <p>ARROWS: MOVE</p>
@@ -208,7 +228,7 @@ export default function ArcadeCabinet() {
               <div className="bg-black p-3 rounded border border-gray-700">
                 <div className="text-green-500 monospace text-xs">GAME</div>
                 <div className="text-green-500 monospace text-sm mt-1">
-                  {currentGame === 'stank' ? 'STANK' : currentGame === 'bong' ? 'BONG' : currentGame === 'hashbash' ? 'HASH BASH' : 'CHRONIC'}
+                  {currentGame === 'stank' ? 'STANK' : currentGame === 'bong' ? 'BONG' : currentGame === 'hashbash' ? 'HASH BASH' : currentGame === 'chronic' ? 'CHRONIC' : 'STANK STACK'}
                 </div>
               </div>
             </div>

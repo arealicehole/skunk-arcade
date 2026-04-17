@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0612"/>
+      <stop offset="50%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#0a1a0a"/>
+    </linearGradient>
+    <linearGradient id="stackGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50"/>
+      <stop offset="100%" style="stop-color:#2E7D32"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="200" height="200" fill="url(#bgGrad)"/>
+  
+  <!-- Smoke wisps -->
+  <circle cx="50" cy="50" r="20" fill="rgba(140,200,140,0.2)"/>
+  <circle cx="180" cy="80" r="25" fill="rgba(140,200,140,0.15)"/>
+  <circle cx="150" cy="160" r="18" fill="rgba(140,200,140,0.25)"/>
+  
+  <!-- Title text -->
+  <text x="100" y="90" font-family="Press Start 2P" font-size="18" fill="#00FF66" text-anchor="middle" font-weight="bold">
+    STANK
+  </text>
+  
+  <!-- Stack visualization -->
+  <g transform="translate(70, 100)">
+    <!-- Bottom piece -->
+    <rect x="0" y="52" width="60" height="60" fill="#1a1a1a" rx="4"/>
+    <rect x="2" y="54" width="56" height="56" fill="#4CAF50" opacity="0.7" rx="4"/>
+    <rect x="4" y="56" width="52" height="52" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" rx="4"/>
+    
+    <!-- Middle piece -->
+    <rect x="0" y="28" width="60" height="60" fill="#1a1a1a" rx="4"/>
+    <rect x="2" y="30" width="56" height="56" fill="#8B0000" opacity="0.7" rx="4"/>
+    <rect x="4" y="32" width="52" height="52" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" rx="4"/>
+    
+    <!-- Top piece -->
+    <rect x="0" y="4" width="60" height="60" fill="#1a1a1a" rx="4"/>
+    <rect x="2" y="6" width="56" height="56" fill="#FFD700" opacity="0.7" rx="4"/>
+    <rect x="4" y="8" width="52" height="52" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" rx="4"/>
+    
+    <!-- Overflow pieces -->
+    <rect x="-10" y="4" width="60" height="60" fill="#1a1a1a" rx="4"/>
+    <rect x="-8" y="6" width="56" height="56" fill="#1B5E20" opacity="0.7" rx="4"/>
+    
+    <rect x="70" y="4" width="60" height="60" fill="#1a1a1a" rx="4"/>
+    <rect x="72" y="6" width="56" height="56" fill="#B8860B" opacity="0.7" rx="4"/>
+  </g>
+  
+  <!-- Warning symbol -->
+  <polygon points="100,70 130,90 130,110 100,130 70,110 70,90" fill="none" stroke="#FF4444" stroke-width="3"/>
+  <text x="100" y="100" font-family="Press Start 2P" font-size="20" fill="#FF4444" text-anchor="middle" font-weight="bold">!</text>
+  
+  <!-- Cannabis leaf decoration -->
+  <path d="M100 20 Q120 40 140 40 Q150 45 150 50 Q150 60 130 60 Q115 65 100 55 Q85 65 70 60 Q50 60 50 50 Q50 45 60 40 Q80 40 100 20 Z" fill="none" stroke="#4CAF50" stroke-width="2" opacity="0.5"/>
+</svg>
